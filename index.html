@@ -224,6 +224,30 @@
             color: var(--turquesa-oscuro);
             margin: 8px 0;
         }
+         /* ===== GALERÍA ===== */
+        #galeria {
+            text-align: center;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .galeria img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+
     </style>
 </head>
 
@@ -238,6 +262,7 @@
             <a href="#productos">Productos</a>
             <a href="#nosotros">Nosotros</a>
             <a href="#contacto">Contacto</a>
+            <a href="#galeria">Galería</a>
         </nav>
     </header>
 
@@ -284,6 +309,19 @@
 
             </div>
         </section>
+
+    <section id="galeria">
+      <h2>Pulseras de cristal</h2>
+      <p>Hechas para combinar con todo. ¡Elige tus colores favoritos! 💎</p>
+
+      <div class="galeria">
+        <img src="imagenes/pulseras1.jpg" alt="Pulseras de cristal de colores en bandeja dorada" loading="lazy">
+        <img src="imagenes/pulseras2.jpg" alt="Pulseras de cristal puestas en la muñeca" loading="lazy">
+        <img src="imagenes/pulseras3.jpg" alt="Seis modelos de pulseras con cruces y medallas" loading="lazy">
+      </div>
+
+      <a href="https://wa.me/573004438635" target="_blank" class="boton-whatsapp">Pregunta por tus colores</a>
+    </section>
 
         <section id="nosotros">
             <h2>Sobre nosotros</h2>
