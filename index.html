@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almar | Moda y accesorios para mujer</title>
+    <title>AlMar | Moda y accesorios para mujer</title>
     <style>
         /* ===== COLORES DE ALMAR ===== */
         /* EDITA AQUÍ: los colores de la marca */
@@ -13,6 +13,8 @@
             --rosa-oscuro: #E8889F;
             --crema: #FDF4EF;
             --texto: #4A3B3B;
+            --turquesa: #22D3DB;
+            --turquesa-oscuro: #0E8F98;
         }
 
         /* ===== TODA LA PÁGINA ===== */
@@ -38,7 +40,7 @@
         }
 
         nav a:hover {
-            color: var(--rosa-oscuro);
+         color: var(--turquesa-oscuro);
         }
 
         /* ===== SECCIONES ===== */
@@ -105,6 +107,7 @@
         }
 
         /* ===== TARJETAS DE PRODUCTOS ===== */
+        .tarjeta {  border-bottom: 4px solid var(--turquesa)}
         .tarjetas {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -198,6 +201,24 @@
         .whatsapp-flotante:hover {
             transform: scale(1.4);
         }
+        /* ===== SOBRE NOSOTROS ===== */
+        .nosotros-texto {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.15rem;
+        }
+
+        .firma {
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--rosa-oscuro);
+        }
+          /* ===== NOMBRE DE LA TIENDA ===== */
+        header h1 {
+            color: var(--turquesa-oscuro);
+            margin: 8px 0;
+        }
     </style>
 </head>
 
@@ -205,8 +226,8 @@
 
     <!-- ===== CABECERA ===== -->
     <header>
-        <img src="imagenes/logo.png" alt="Logo de Almar" width="80">
-        <h1>Almar</h1>
+        <img src="imagenes/logo.png" alt="Logo de AlMar" width="80">
+        <h1>AlMar</h1>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#productos">Productos</a>
@@ -259,10 +280,16 @@
             </div>
         </section>
 
-        <section id="nosotros">
-            <h2>Sobre nosotros</h2>
-            <p>En Almar te ayudamos a encontrar tu estilo.</p>
-        </section>
+      <section id="nosotros">
+      <h2>Sobre nosotros</h2>
+      <div class="nosotros-texto">
+        <p>AlMar nace como un espacio pensado para ti.</p>
+        <p>Estaremos para ti siempre que quieras sentirte
+          <strong>linda, cómoda y segura... sin esfuerzo.</strong></p>
+        <p>Aquí encuentras detalles que elevan tu esencia 💫</p>
+        <p class="firma">Bienvenida a AlMar 💖</p>
+      </div>
+    </section>
 
           <section id="contacto">
       <h2>Contacto</h2>
