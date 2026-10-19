@@ -28,7 +28,7 @@
         header {
             text-align: center;
             padding: 24px 16px;
-            background: white;
+            background:  var(--crema);
         }
 
         nav a {
@@ -101,6 +101,45 @@
             background: var(--rosa);
             font-size: 0.9rem;
         }
+         /* ===== TARJETAS DE PRODUCTOS ===== */
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-6px);
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Para fotos donde lo importante está abajo */
+        .foto-abajo {
+            object-position: bottom;
+        }
+
+        .tarjeta h3 {
+            margin: 16px 0 4px;
+        }
+
+        .tarjeta p {
+            margin: 0 16px 20px;
+        }
     </style>
 </head>
 
@@ -129,16 +168,31 @@
             <a href="https://wa.me/573004438635" target="_blank" class="boton-whatsapp">Escríbenos por WhatsApp</a>
         </section>
 
-        <section id="productos">
-            <h2>Nuestros productos</h2>
-            <h3>Bolsos</h3>
-            <p>Bolsos para el día a día y para ocasiones especiales.</p>
-            <h3>Blusas</h3>
-            <p>Blusas cómodas y a la moda.</p>
-            <h3>Accesorios</h3>
-            <img src="imagenes/gafas.jpg" alt="Gafas de sol y accesorios de Almar" width="300">
-            <p>Aretes, collares, pulseras y mucho más.</p>
-        </section>
+         <section id="productos">
+      <h2>Nuestros productos</h2>
+
+      <div class="tarjetas">
+
+        <article class="tarjeta">
+          <img src="imagenes/bolsos.jpg" alt="Bolsos de Almar" class="foto-abajo">
+          <h3>Bolsos</h3>
+          <p>Bolsos para el día a día y para ocasiones especiales.</p>
+        </article>
+
+        <article class="tarjeta">
+          <img src="imagenes/blusas.jpg" alt="Blusas de Almar">
+          <h3>Blusas</h3>
+          <p>Blusas cómodas y a la moda.</p>
+        </article>
+
+        <article class="tarjeta">
+          <img src="imagenes/gafas.jpg" alt="Gafas de sol y accesorios de Almar">
+          <h3>Accesorios</h3>
+          <p>Gafas, aretes, collares, pulseras y mucho más.</p>
+        </article>
+
+      </div>
+    </section>
 
         <section id="nosotros">
             <h2>Sobre nosotros</h2>
