@@ -28,7 +28,7 @@
         header {
             text-align: center;
             padding: 24px 16px;
-            background:  var(--crema);
+            background: var(--crema);
         }
 
         nav a {
@@ -56,7 +56,8 @@
         img {
             max-width: 100%;
         }
-         /* ===== PORTADA ===== */
+
+        /* ===== PORTADA ===== */
         #inicio {
             max-width: none;
             min-height: 70vh;
@@ -94,14 +95,16 @@
             background: var(--rosa-oscuro);
             color: white;
         }
-           /* ===== PIE DE PÁGINA ===== */
+
+        /* ===== PIE DE PÁGINA ===== */
         footer {
             text-align: center;
             padding: 24px 16px;
             background: var(--rosa);
             font-size: 0.9rem;
         }
-         /* ===== TARJETAS DE PRODUCTOS ===== */
+
+        /* ===== TARJETAS DE PRODUCTOS ===== */
         .tarjetas {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -131,6 +134,13 @@
         /* Para fotos donde lo importante está abajo */
         .foto-abajo {
             object-position: bottom;
+        }
+
+        /* Para mostrar solo el maquillaje (abajo a la izquierda) */
+        .foto-izquierda {
+            object-position: left bottom;
+            transform: scale(2.2);
+            transform-origin: left bottom;
         }
 
         .tarjeta h3 {
@@ -163,45 +173,43 @@
         <section id="inicio">
             <!-- EDITA AQUÍ: frase principal -->
             <h2>Hecho para llevar el mar contigo.</h2>
-             <p>Bolsos, blusas, accesorios y maquillaje para mujer en Tolú.</p>
+            <p>Bolsos, blusas, accesorios y maquillaje para mujer en Tolú.</p>
             <p><strong>🚚 Envíos a toda Colombia</strong></p>
             <a href="https://wa.me/573004438635" target="_blank" class="boton-whatsapp">Escríbenos por WhatsApp</a>
         </section>
 
-         <section id="productos">
-      <h2>Nuestros productos</h2>
+        <section id="productos">
+            <h2>Nuestros productos</h2>
 
-      <div class="tarjetas">
+            <div class="tarjetas">
 
-        <article class="tarjeta">
-          <img src="imagenes/bolsos.jpg" alt="Bolsos de Almar" class="foto-abajo">
-          <h3>Bolsos</h3>
-          <p>Bolsos para el día a día y para ocasiones especiales.</p>
-        </article>
+                <article class="tarjeta">
+                    <img src="imagenes/bolsos.jpg" alt="Bolsos de Almar" class="foto-abajo">
+                    <h3>Bolsos</h3>
+                    <p>Bolsos para el día a día y para ocasiones especiales.</p>
+                </article>
 
-        <article class="tarjeta">
-          <img src="imagenes/blusas.jpg" alt="Blusas de Almar">
-          <h3>Blusas</h3>
-          <p>Blusas cómodas y a la moda.</p>
-        </article>
+                <article class="tarjeta">
+                    <img src="imagenes/blusas.jpg" alt="Blusas de Almar">
+                    <h3>Blusas</h3>
+                    <p>Blusas cómodas y a la moda.</p>
+                </article>
 
-        <article class="tarjeta">
-          <img src="imagenes/gafas.jpg" alt="Gafas de sol y accesorios de Almar">
-          <h3>Accesorios</h3>
-          <p>Gafas, aretes, collares, pulseras y mucho más.</p>
-        </article>
+                <article class="tarjeta">
+                    <img src="imagenes/gafas.jpg" alt="Gafas de sol y accesorios de Almar">
+                    <h3>Accesorios</h3>
+                    <p>Gafas, aretes, collares, pulseras y mucho más.</p>
+                </article>
 
-          <article class="tarjeta">
-          <img src="imagenes/bolsos.jpg" alt="Maquillaje de Almar" class=" .foto-izquierda {
-            object-position: left bottom;
-        }">
-          <h3>Maquillaje</h3>
-          <p>Rubores, labiales y todo para resaltar tu belleza.</p>
-        </article>
+                <article class="tarjeta">
+                    <img src="imagenes/bolsos.jpg" alt="Maquillaje de Almar" class="foto-izquierda">
+                    <h3>Maquillaje</h3>
+                    <p>Rubores, labiales y todo para resaltar tu belleza.</p>
+                </article>
 
 
-      </div>
-    </section>
+            </div>
+        </section>
 
         <section id="nosotros">
             <h2>Sobre nosotros</h2>
