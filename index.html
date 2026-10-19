@@ -5,6 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Almar | Moda y accesorios para mujer</title>
+    <style>
+        /* ===== COLORES DE ALMAR ===== */
+        /* EDITA AQUÍ: los colores de la marca */
+        :root {
+            --rosa: #F9B4C7;
+            --rosa-oscuro: #E8889F;
+            --crema: #FDF4EF;
+            --texto: #4A3B3B;
+        }
+
+        /* ===== TODA LA PÁGINA ===== */
+        body {
+            margin: 0;
+            background: var(--crema);
+            color: var(--texto);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.6;
+        }
+
+        /* ===== CABECERA ===== */
+        header {
+            text-align: center;
+            padding: 24px 16px;
+            background: white;
+        }
+
+        nav a {
+            color: var(--texto);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: var(--rosa-oscuro);
+        }
+
+        /* ===== SECCIONES ===== */
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 16px;
+        }
+
+        h2 {
+            color: var(--rosa-oscuro);
+        }
+
+        /* Las imágenes nunca se salen de la pantalla */
+        img {
+            max-width: 100%;
+        }
+         /* ===== PORTADA ===== */
+        #inicio {
+            max-width: none;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                url("imagenes/gafas.jpg") center / cover;
+        }
+
+        #inicio h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin: 0 0 8px;
+        }
+
+        /* ===== BOTÓN DE WHATSAPP ===== */
+        .boton-whatsapp {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 14px 28px;
+            background: var(--rosa);
+            color: var(--texto);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background 0.3s;
+        }
+
+        .boton-whatsapp:hover {
+            background: var(--rosa-oscuro);
+            color: white;
+        }
+           /* ===== PIE DE PÁGINA ===== */
+        footer {
+            text-align: center;
+            padding: 24px 16px;
+            background: var(--rosa);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,7 +126,7 @@
             <h2>Hecho para llevar el mar contigo.</h2>
             <p>Bolsos, blusas y accesorios para mujer en Tolú.</p>
             <p><strong>🚚 Envíos a toda Colombia</strong></p>
-            <a href="https://wa.me/573004438635" target="_blank">Escríbenos por WhatsApp</a>
+            <a href="https://wa.me/573004438635" target="_blank" class="boton-whatsapp">Escríbenos por WhatsApp</a>
         </section>
 
         <section id="productos">
