@@ -367,11 +367,17 @@
 
     <!-- ===== PIE DE PÁGINA ===== -->
     <footer>
-        <p>© 2026 AlMar. Todos los derechos reservados.</p>
+    <p>© <span id="anio">2026</span> AlMar. Todos los derechos reservados.</p>
     </footer>
     <!-- ===== BOTÓN FLOTANTE DE WHATSAPP ===== -->
     <a href="https://wa.me/573004438635" target="_blank" class="whatsapp-flotante"
         aria-label="Escríbenos por WhatsApp">💬</a>
+           <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Año actual en el pie de página (se actualiza solo)
+        const anio = new Date().getFullYear();
+        document.getElementById("anio").textContent = anio;
+    </script>
 
 </body>
 
