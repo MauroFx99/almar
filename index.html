@@ -252,7 +252,8 @@
         .galeria img:hover {
             transform: scale(1.05);
         }
-         /* ===== AVISO ABIERTO / CERRADO ===== */
+
+        /* ===== AVISO ABIERTO / CERRADO ===== */
         .estado {
             display: inline-block;
             padding: 6px 16px;
@@ -269,6 +270,36 @@
             color: #C0392B;
         }
 
+        /* ===== MENÚ PARA CELULAR ===== */
+        .boton-menu {
+            display: none;
+            /* en computadora no se ve */
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--turquesa-oscuro);
+            cursor: pointer;
+        }
+
+        /* EDITA AQUÍ: ancho máximo de pantalla que se considera "celular" */
+        @media (max-width: 600px) {
+            .boton-menu {
+                display: inline-block;
+                /* en celular sí se ve */
+            }
+
+            nav {
+                display: none;
+                /* el menú empieza escondido */
+            }
+
+            nav.visible {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 12px;
+            }
+        }
     </style>
 </head>
 
@@ -278,7 +309,8 @@
     <header>
         <img src="imagenes/logo.png" alt="Logo de AlMar" width="80">
         <h1>AlMar</h1>
-        <nav>
+        <button class="boton-menu" id="boton-menu" aria-label="Abrir menú">☰</button>
+        <nav id="menu">
             <a href="#inicio">Inicio</a>
             <a href="#productos">Productos</a>
             <a href="#galeria">Galería</a>
@@ -396,7 +428,8 @@
         // Año actual en el pie de página (se actualiza solo)
         const anio = new Date().getFullYear();
         document.getElementById("anio").textContent = anio;
-         // ===== ¿ABIERTO O CERRADO? =====
+
+        // ===== ¿ABIERTO O CERRADO? =====
         const ahora = new Date();
         const dia = ahora.getDay();     // 0 = domingo, 1 = lunes ... 6 = sábado
         const hora = ahora.getHours();  // de 0 a 23 (formato 24 horas)
@@ -414,6 +447,21 @@
             estado.textContent = "🔴 Cerrado ahora · Escríbenos y te respondemos pronto";
             estado.classList.add("cerrado");
         }
+
+        // ===== MENÚ PARA CELULAR =====
+        const botonMenu = document.getElementById("boton-menu");
+        const menu = document.getElementById("menu");
+
+        function abrirCerrarMenu() {
+            menu.classList.toggle("visible");
+        }
+
+        function cerrarMenu() {
+            menu.classList.remove("visible");
+        }
+
+        botonMenu.addEventListener("click", abrirCerrarMenu);
+        menu.addEventListener("click", cerrarMenu);  // al tocar una opción, se cierra
     </script>
 
 </body>
