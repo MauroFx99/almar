@@ -452,12 +452,19 @@
         const botonMenu = document.getElementById("boton-menu");
         const menu = document.getElementById("menu");
 
-        function abrirCerrarMenu() {
+          function abrirCerrarMenu() {
             menu.classList.toggle("visible");
+
+            if (menu.classList.contains("visible")) {
+                botonMenu.textContent = "✕";
+            } else {
+                botonMenu.textContent = "☰";
+            }
         }
 
         function cerrarMenu() {
             menu.classList.remove("visible");
+            botonMenu.textContent = "☰";
         }
 
         botonMenu.addEventListener("click", abrirCerrarMenu);
