@@ -4,7 +4,7 @@
 
 Web de **AlMar**, tienda de moda y accesorios para mujer en Tolú, Colombia.
 
-🔗 **Ver la web:** https://almar-showroom.netlify.app
+🔗 **Ver la web:** https://maurofx99.github.io/almar/
 
 ![Portada de AlMar](imagenes/portada.jpg)
 
@@ -29,4 +29,4 @@ Web de **AlMar**, tienda de moda y accesorios para mujer en Tolú, Colombia.
 2. Abre `index.html` en el navegador.
 
 ## Autor
-Hecho por **Mauricio** ([MauroFx99](https://github.com/MauroFx99)), con permiso de la dueña de AlMar.
+Hecho por **Mauricio** ([MauroFx99](https://maurofx99.github.io/almar/)), con permiso de la dueña de AlMar.
