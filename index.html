@@ -252,6 +252,23 @@
         .galeria img:hover {
             transform: scale(1.05);
         }
+         /* ===== AVISO ABIERTO / CERRADO ===== */
+        .estado {
+            display: inline-block;
+            padding: 6px 16px;
+            background: white;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .abierto {
+            color: #1B7F3B;
+        }
+
+        .cerrado {
+            color: #C0392B;
+        }
+
     </style>
 </head>
 
@@ -278,6 +295,7 @@
             <h2>Hecho para llevar el mar contigo.</h2>
             <p>Bolsos, blusas, accesorios y maquillaje para mujer en Tolú.</p>
             <p><strong>🚚 Envíos a toda Colombia</strong></p>
+            <p id="estado-tienda" class="estado"></p>
             <a href="https://wa.me/573004438635" target="_blank" class="boton-whatsapp">Escríbenos por WhatsApp</a>
         </section>
 
@@ -378,6 +396,24 @@
         // Año actual en el pie de página (se actualiza solo)
         const anio = new Date().getFullYear();
         document.getElementById("anio").textContent = anio;
+         // ===== ¿ABIERTO O CERRADO? =====
+        const ahora = new Date();
+        const dia = ahora.getDay();     // 0 = domingo, 1 = lunes ... 6 = sábado
+        const hora = ahora.getHours();  // de 0 a 23 (formato 24 horas)
+
+        // EDITA AQUÍ: horario de la tienda (formato 24 horas: 4 p.m. = 16)
+        const turnoManana = hora >= 9 && hora < 12;
+        const turnoTarde = hora >= 16 && hora < 19;
+
+        const estado = document.getElementById("estado-tienda");
+
+        if (dia !== 0 && (turnoManana || turnoTarde)) {
+            estado.textContent = "🟢 Abierto ahora";
+            estado.classList.add("abierto");
+        } else {
+            estado.textContent = "🔴 Cerrado ahora · Escríbenos y te respondemos pronto";
+            estado.classList.add("cerrado");
+        }
     </script>
 
 </body>
