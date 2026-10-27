@@ -270,6 +270,56 @@
             color: #C0392B;
         }
 
+        /* ===== FORMULARIO DE PEDIDO ===== */
+        #pedido {
+            text-align: center;
+        }
+
+        .formulario {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 24px;
+            background: white;
+            border-radius: 16px;
+            border-bottom: 4px solid var(--turquesa);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .formulario label {
+            display: block;
+            margin-top: 16px;
+            font-weight: bold;
+        }
+
+        .formulario input,
+        .formulario select,
+        .formulario textarea {
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 6px;
+            padding: 10px;
+            border: 1px solid #DDD;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .formulario input:focus,
+        .formulario select:focus,
+        .formulario textarea:focus {
+            outline: 2px solid var(--turquesa);
+        }
+
+        .formulario button {
+            width: 100%;
+            margin-top: 24px;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
         /* ===== MENÚ PARA CELULAR ===== */
         .boton-menu {
             display: none;
@@ -315,6 +365,7 @@
             <a href="#productos">Productos</a>
             <a href="#galeria">Galería</a>
             <a href="#nosotros">Nosotros</a>
+            <a href="#pedido">Pedido</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
@@ -387,6 +438,34 @@
                 <p>Aquí encuentras detalles que elevan tu esencia 💫</p>
                 <p class="firma">Bienvenida a AlMar 💖</p>
             </div>
+        </section>
+
+        <section id="pedido">
+            <h2>Haz tu pedido</h2>
+            <p>Cuéntanos qué te gusta y te respondemos por WhatsApp 💬</p>
+
+            <form id="formulario-pedido" class="formulario">
+                <label for="nombre">Tu nombre</label>
+                <input type="text" id="nombre" placeholder="Ej: Laura" required>
+
+                <label for="producto">¿Qué te interesa?</label>
+                <select id="producto" required>
+                    <option value="">Elige una opción</option>
+                    <option>Bolsos</option>
+                    <option>Blusas</option>
+                    <option>Accesorios</option>
+                    <option>Maquillaje</option>
+                    <option>Pulseras de cristal</option>
+                </select>
+
+                <label for="ciudad">Tu ciudad</label>
+                <input type="text" id="ciudad" placeholder="Ej: Medellín" required>
+
+                <label for="detalles">Detalles (opcional)</label>
+                <textarea id="detalles" rows="3" placeholder="Ej: color rosa, talla M"></textarea>
+
+                <button type="submit" class="boton-whatsapp">Enviar por WhatsApp</button>
+            </form>
         </section>
 
         <section id="contacto">
@@ -469,6 +548,31 @@
 
         botonMenu.addEventListener("click", abrirCerrarMenu);
         menu.addEventListener("click", cerrarMenu);  // al tocar una opción, se cierra
+
+        // ===== FORMULARIO DE PEDIDO =====
+        // EDITA AQUÍ: número de WhatsApp de AlMar (sin +, sin espacios)
+        const numeroWhatsapp = "573004438635";
+        const formulario = document.getElementById("formulario-pedido");
+
+        function enviarPedido(evento) {
+            evento.preventDefault();  // evita que la página se recargue
+
+            const nombre = document.getElementById("nombre").value;
+            const producto = document.getElementById("producto").value;
+            const ciudad = document.getElementById("ciudad").value;
+            const detalles = document.getElementById("detalles").value;
+
+            let texto = "Hola AlMar 👋 Soy " + nombre + ", de " + ciudad + ". Me interesa: " + producto + ".";
+
+            if (detalles !== "") {
+                texto = texto + " Detalles: " + detalles;
+            }
+
+            const enlace = "https://wa.me/" + numeroWhatsapp + "?text=" + encodeURIComponent(texto);
+            window.open(enlace, "_blank");
+        }
+
+        formulario.addEventListener("submit", enviarPedido);
     </script>
 
 </body>
