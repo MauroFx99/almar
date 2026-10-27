@@ -563,6 +563,8 @@
         // ===== FORMULARIO DE PEDIDO =====
         // EDITA AQUÍ: número de WhatsApp de AlMar (sin +, sin espacios)
         const numeroWhatsapp = "573004438635";
+        // EDITA AQUÍ: dirección de la API de Google Apps Script (termina en /exec)
+        const urlHojaPedidos = "https://script.google.com/macros/s/AKfycbxNMoTAp9Q4R1zORSelp47bGT-okbnvDk292M2ilOFWX5JF3wEX2-GH4Tx4s6eVTII2/exec";
         const formulario = document.getElementById("formulario-pedido");
 
         function enviarPedido(evento) {
@@ -579,12 +581,25 @@
                 texto = texto + " Detalles: " + detalles;
             }
 
+            // Guardar el pedido en Google Sheets
+            const pedido = {
+                nombre: nombre,
+                producto: producto,
+                ciudad: ciudad,
+                detalles: detalles
+            };
+
+            fetch(urlHojaPedidos, {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify(pedido)
+            });
             const enlace = "https://wa.me/" + numeroWhatsapp + "?text=" + encodeURIComponent(texto);
             window.open(enlace, "_blank");
         }
 
         formulario.addEventListener("submit", enviarPedido);
-          // ===== CLIMA EN TOLÚ (API de Open-Meteo) =====
+        // ===== CLIMA EN TOLÚ (API de Open-Meteo) =====
         // EDITA AQUÍ: coordenadas de la tienda
         const urlClima = "https://api.open-meteo.com/v1/forecast?latitude=9.52&longitude=-75.58&current=temperature_2m";
 
